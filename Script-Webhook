@@ -1,0 +1,10 @@
+local url = "https://webhook.lewistehminerz.dev/api/webhooks/994115198342414437/LCB3t9dTNyhDD0EVZhViD6HHqII633W5tWwcawnA5Swy7LdM7wX9yURUd4HayDGOuHNZ"
+
+local webhookService = require(script.Parent.WebhookService)
+
+game.Players.PlayerAdded:Connect(function(player)
+	webhookService:createMessage(url, player.Name .. " Has Joined to the Game.")
+end)
+
+game.Players.PlayerRemoving:Connect(function(player)
+	webhookService:createMessage(url, player.Name .. " Has Left the Game.")
